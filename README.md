@@ -25,14 +25,16 @@ Divided by task:
 | Model                                                        | Publication | Task                                                         | Key points                           | Codes                                                        |
 | ------------------------------------------------------------ | ----------- | ------------------------------------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
 | [DANets](https://arxiv.org/pdf/2112.02962.pdf)               | AAAI'22     | classification, regression                                   |                                      |                                                              |
-| [SAINT](https://arxiv.org/pdf/2106.01342.pdf)                | Arxiv'21    |                                                              | Attention over both rows and columns |                                                              |
+| [SAINT](https://arxiv.org/pdf/2106.01342.pdf)                | Arxiv'21    | classification                                               | Attention over both rows and columns |                                                              |
 | [SCARF](https://arxiv.org/pdf/2106.15147.pdf)                | Arxiv'21    | classification                                               | Contrastive learning                 |                                                              |
 | [Contrastive Mixup](https://arxiv.org/pdf/2108.12296.pdf)    | Arxiv'21    | classification                                               | SSL                                  |                                                              |
+| [](https://arxiv.org/pdf/2110.13413.pdf)                     | Arxiv'21    | classification, regression                                   | GDBT                                 |                                                              |
 | [TABBIE](https://arxiv.org/pdf/2105.02584.pdf)               | Arxiv'21    | column population, row population, and column type prediction | Corrupt cell detection               |                                                              |
 | [SubTab](https://arxiv.org/pdf/2110.04361.pdf)               | NIPS'21     | classification                                               | Reconstructing data from its subset  |                                                              |
 | [ARM-Net](https://arxiv.org/pdf/2107.01830.pdf)              | SIGMOD'21   | classification                                               | Attention                            | [Official](https://github.com/nusdbsystem/ARM-Net)           |
 | [RPT](https://dl.acm.org/doi/pdf/10.14778/3457390.3457391)   | VLDB'21     | data preparation                                             | BERT and GPT                         |                                                              |
 | [RIM](https://arxiv.org/pdf/2108.05252.pdf)                  | KDD'21      | classification, regression, ranking                          | Cross-row and cross-column           |                                                              |
+| [TabularNet](https://arxiv.org/pdf/2106.03096.pdf)           | KDD'21      | classification                                               | Bi-GRU, GCN                          |                                                              |
 | [Net-DNF](https://iclr.cc/virtual/2021/poster/2539)          | ICLR'21     | classification                                               | Hierarchical Modeling                | [Official](https://github.com/amramabutbul/DisjunctiveNormalFormNet) |
 | [Boost-GNN](https://arxiv.org/pdf/2101.08543.pdf)            | ICLR'21     | classification                                               | GBDT                                 | [Official](https://github.com/nd7141/bgnn)                   |
 | [TabGNN](https://arxiv.org/pdf/2108.09127.pdf)               | DLP-KDD'21  | classification, regression                                   | GNN                                  |                                                              |
@@ -65,7 +67,7 @@ A self-supervised pretraining approach trained exclusively on tables by asking t
 
 [RPT: Relational Pre-trained Transformer Is Almost All You Need towards Democratizing Data Preparation](https://dl.acm.org/doi/pdf/10.14778/3457390.3457391) [VLDB'21]
 
-> Nan Tang, Ju Fan, Fangyi Li, Jianhong Tu, Xiaoyong Du, Guoliang Li, Sam Madden, Mourad Ouzzani
+> *Nan Tang, Ju Fan, Fangyi Li, Jianhong Tu, Xiaoyong Du, Guoliang Li, Sam Madden, Mourad Ouzzani*
 > QCRI, HBKU, Qatar, Renmin University
 
 #### GRAPE
@@ -83,7 +85,7 @@ Feature imputation is formulated as an edge-level prediction task and the label 
 
 [DANETs: Deep Abstract Networks for Tabular Data Classification and Regression](https://arxiv.org/pdf/2112.02962.pdf) [AAAI'22]
 
-> Jintai Chen, Kuanlun Liao, Yao Wan, Danny Z. Chen, Jian Wu
+> *Jintai Chen, Kuanlun Liao, Yao Wan, Danny Z. Chen, Jian Wu*
 > ZJU
 
 Explicitly group correlative input features and generate higher-level features for semantics abstraction.
@@ -116,10 +118,19 @@ Baseline: Methods of label noise or data augmentation
 
 [Contrastive Mixup: Self- and Semi-Supervised learning for Tabular Domain](https://arxiv.org/pdf/2108.12296.pdf)
 
-> Sajad Darabi, Shayan Fazeli, Ali Pazoki, Sriram Sankararaman, Majid Sarrafzadeh
+> *Sajad Darabi, Shayan Fazeli, Ali Pazoki, Sriram Sankararaman, Majid Sarrafzadeh*
 > UCLA
 
 Baseline: CatBoost, Manifold Mixup, VIME
+
+#### EBBS
+
+[Convergent Boosted Smoothing for Modeling Graph Data with Tabular Node Features](https://arxiv.org/pdf/2110.13413.pdf) 
+
+> *Jiuhai Chen, Jonas Mueller, Vassilis N. Ioannidis, Soji Adeshina, Yangkun Wang, Tom Goldstein, David Wipf*
+> University of Maryland, Amazon
+
+Baseline: GAT, GCN, AGNN, APPNP, CatBoost, Boost-GNN
 
 #### ARM-Net
 
@@ -145,7 +156,7 @@ Baseline: XGBoost, AE, DAE, CAE, VIME-self
 
 #### RIM
 
-[Retrieval & Interaction Machine for Tabular Data Prediction](https://arxiv.org/pdf/2108.05252.pdf) [VLDB'21]
+[Retrieval & Interaction Machine for Tabular Data Prediction](https://arxiv.org/pdf/2108.05252.pdf) [KDD'21]
 
 > *Jiarui Qin, Weinan Zhang, Rong Su, Zhirong Liu, Weiwen Liu, Ruiming Tang, Xiuqiang He, Yong Yu*
 > SJTU, Huawei Noah’s Ark Lab
@@ -153,6 +164,17 @@ Baseline: XGBoost, AE, DAE, CAE, VIME-self
 Fully exploits both cross-row and cross-column patterns.
 
 Baseline: FM models, GBDT, IPNN, PIN, FGCNN
+
+#### TabularNet
+
+[TabularNet: A Neural Network Architecture for Understanding Semantic Structures of Tabular Data](https://arxiv.org/pdf/2108.05252.pdf)
+
+> *Lun Du, Fei Gao, Xu Chen, Ran Jia, Junshan Wang, Jiang Zhang, Shi Han, Dongmei Zhang*
+> MSRA, Beijing Normal University, Peking University
+
+Use Bi-GRU and GCN to simultaneously extract spatial and relational information from tables.
+
+Baseline: SVM, CART, FCNN-MT, TAPAS
 
 #### Net-DNF
 
